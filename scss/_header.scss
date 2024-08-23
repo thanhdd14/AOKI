@@ -1,0 +1,189 @@
+@use "vars" as *;
+
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: white;
+	z-index: 999;
+	@include flex(between,0,wrap);
+	.header-logo{
+		@include flex(center,center,wrap);
+		width: 300px;
+		img{
+			width: 235px;
+		}
+	}
+	.header-nav{
+		width: calc(100% - 300px);
+		@include flex(end,cennter,wrap);
+		@include mq(tb){
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 100vh;
+			padding: 60px 20px 0;
+			overflow-y: scroll;
+			&.active{
+				display: block;
+			}
+		}
+		&__menu{
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			margin-right: 15px;
+			@include mq(tb){
+				display: block;
+			}
+			&-item{
+				padding: 0 15px;
+				a{
+					display: block;
+					@include font-size(14);
+					font-weight: 500;
+					color: $dark;
+					position: relative;
+					padding: 15px 0;
+					&:after{
+						content: "";
+						width: 8px;
+						height: 8px;
+						margin: 0 auto;
+						background: url("../img/common/dots.png")no-repeat;
+						background-size: 100%;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						opacity: 0;
+						visibility: hidden;
+						@include smooth-transition;
+					}
+					&:hover,&.active{
+						color: $gray;
+						opacity: 1;
+						&:after{
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+				}
+			}
+		}
+	}
+	.header-item{
+		width: 320px;
+		@include flex(0,0,wrap);
+		img{
+			display: block;
+			width: 30px;
+		}
+		a{
+			height: 90px;
+			@include flex(center,center,wrap);
+			color: white;
+			@include font-size(15);
+			font-weight: 500;
+			&:hover{
+				opacity: 1;
+			}
+		}
+		&__tel{
+			width: 90px;
+			background: rgb(246,248,248);
+			background: linear-gradient(90deg, rgba(246,248,248,1) 0%, rgba(223,232,236,1) 100%);
+		}
+		&__web{
+			width: calc(100% - 90px);
+			//background: rgb(128,185,205);
+			//background: linear-gradient(90deg, rgba(128,185,205,1) 0%, rgba(62,112,132,1) 100%);
+
+			background: rgb(128,185,205);
+			background: linear-gradient(90deg, rgba(128,185,205,1) 0%, rgba(94,148,168,1) 51%, rgba(128,185,205,1) 100%);
+			background-position: 1% 50%;
+			background-size: 200% auto;
+			&:hover{
+				background-position: 99% 50%;
+			}
+			img{
+				margin-right: 10px;
+			}
+		}
+	}
+	.js-mobile {
+		width: 26px;
+		height: 30px;
+		position: absolute;
+		right: 20px;
+		@include v-align;
+		cursor: pointer;
+		z-index: 12;
+		display: none;
+		@include mq(tb){
+			display: block;
+		}
+		span{
+			position: absolute;
+			@include v-align;
+			display: block;
+			width: 100%;
+			height: 2px;
+			background: #333;
+			border-radius: 3px;
+			&:before,&:after{
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #333;
+				content: '';
+				-webkit-transition: -webkit-transform 0.3s;
+				transition: transform 0.3s;
+				border-radius: 3px;
+			}
+			&:before{
+				-webkit-transform: translateY(-250%);
+				transform: translateY(-250%);
+				top: -6px;
+			}
+			&:after{
+				-webkit-transform: translateY(250%);
+				transform: translateY(250%);
+				bottom: -6px;
+			}
+		}
+		&--close {
+			span{
+				background-color: transparent;
+				&:before,&:after{
+					width: 100%;
+					background: #333;
+				}
+				&:before {
+					-webkit-transform: translateY(0) rotate(45deg);
+					transform: translateY(0) rotate(45deg);
+					top: 2px;
+				}
+				&:after {
+					-webkit-transform: translateY(0) rotate(-45deg);
+					transform: translateY(0) rotate(-45deg);
+					bottom: -2px;
+				}
+			}
+		}
+	}
+}
+
+
+.js-locked {
+	overflow: hidden;
+	-ms-touch-action: none;
+	touch-action: none;
+	body {
+		-webkit-overflow-scrolling: auto;
+	}
+}

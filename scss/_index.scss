@@ -1,0 +1,203 @@
+@use "vars" as *;
+.mv-slider{
+	width: calc(100% - 320px);
+	.slick-arrow{
+		display: none !important;
+	}
+	&__item{
+		img{
+			width: 100%;
+			height: calc(100vh - 90px);
+			min-height: 720px;
+			@include ob;
+		}
+	}
+}
+.mv-block{
+	width: 320px;
+	background: white;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	&__heading{
+		height: calc(100% - 160px);
+		width: 100%;
+		position: relative;
+		-webkit-writing-mode: vertical-rl;
+		-ms-writing-mode: tb-rl;
+		writing-mode: vertical-rl;
+		&-note{
+			background: #FAFAFA;
+			@include font-size(12);
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 15px 6px;
+			letter-spacing: 4px;
+			span{
+				transform: rotate(-90deg);
+				display: inline-block;
+				position: relative;
+				left: 4px;
+				margin: 0 0 4px;
+			}
+		}
+		&-ttl{
+			@include flex(center,center,wrap);
+			text-align: center;
+			width: 100%;
+			height: calc(100% - 222px);
+			@include fts(26,37);
+			font-weight: 500;
+			color: $gray;
+			letter-spacing: 11px;
+			span{
+				display: block;
+				position: relative;
+				&:nth-child(2){
+					top: 36px;
+				}
+			}
+		}
+		&-ct{
+			@include flex(center,center,wrap);
+			@include fts(14,20);
+			letter-spacing: 6px;
+			width: 100%;
+			height: 222px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+	&__items{
+		@include flex(0,0,wrap);
+		height: 160px;
+		.mv-block__item{
+			border: 1px solid #DCE4E8;
+			width: 50%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			align-content: center;
+			text-align: center;
+			flex-wrap: wrap;
+			@include fts(12,19);
+			letter-spacing: 1px;
+			padding: 10px;
+			img{
+				display: block;
+				width: 45px;
+				margin: 0 auto 20px;
+			}
+			p{
+				width: 100%;
+			}
+			&:nth-child(1){
+				border-left: none;
+			}
+			&:last-child{
+				border-right: none;
+			}
+		}
+	}
+}
+.sec-mv{
+	@include flex(0,0,wrap);
+	height: calc(100vh - 90px);
+	min-height: 720px;
+}
+
+.sec-policy{
+	padding: 163px 3.5% 134px;
+}
+.policy-block{
+	@include flex(0,0,wrap);
+	&__img{
+		width: 46.2%;
+
+		&--sticky{
+			position: sticky;
+			top: 120px;
+		}
+	}
+	&__ct{
+		width: 53.8%;
+		@include fts(16,36);
+		padding: 0 0 0 6%;
+		letter-spacing: 1.5px;
+		p{
+			margin-bottom: 41px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+
+.sec-promise{
+	padding: 0 0 100px;
+}
+
+.writing-block{
+	@include flex(0,0,wrap);
+	&__heading{
+		width: 215px;
+	}
+	&__ct{
+		width: calc(100% - 215px);
+	}
+}
+
+.promise-list{
+	&__item{
+		@include flex(0,0,wrap);
+		margin-bottom: 60px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__box{
+
+	}
+	&__img{
+		width: 280px;
+	}
+	&__ct{
+		width: calc(100% - 280px);
+		padding: 0 0 0 4%;
+		letter-spacing: 1.5px;
+		&-number{
+			display: block;
+			position: relative;
+			color: $gray;
+			line-height: 1;
+			@include font-size(14);
+			font-family: $font-en;
+			letter-spacing: 1px;
+			padding: 0 0 0 20px;
+			margin-bottom: 18px;
+			&:before{
+				content: "";
+				width: 13px;
+				height: 1px;
+				background: $gray;
+				position: absolute;
+				@include v-align;
+				left: 0;
+			}
+		}
+		&-ttl{
+			display: block;
+			@include font-size(18);
+			line-height: 1.4;
+			font-weight: 500;
+			letter-spacing: 2px;
+			margin-bottom: 10px;
+		}
+	}
+}

@@ -1,0 +1,158 @@
+@use "vars" as *;
+
+
+.c-fc{ //font-color
+	&--white{
+		color: white !important;
+	}
+	&--black{
+		color: black !important;
+	}
+}
+
+
+
+.c-ft{//font-family
+	&--en{
+		font-family: $font-en;
+	}
+	&--jp{
+		font-family: $font-jp;
+	}
+}
+
+
+
+
+
+
+
+
+.c-al{
+	&--c{
+		text-align: center !important;
+	}
+	
+	&--r{
+		text-align: right !important
+	}
+	
+	&--l{
+		text-align: left !important;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====================================================
+Component
+==================================================== */
+// Common Text style
+.c-txt{
+	&__basic{
+		@include fts(15,27)
+	}
+}
+
+
+
+
+//ttl
+.c-ttl{
+	&__01{
+		display: block;
+		margin-bottom: 30px;
+		span{
+			display: block;
+		}
+		.c-ft--en{
+			@include font-size(16);
+			line-height: 1.4;
+			letter-spacing: 1px;
+			margin-bottom: 5px;
+		}
+		.c-ft--jp{
+			@include fts(28,50);
+			font-weight: 500;
+			letter-spacing: 3px;
+			span{
+				display: contents;
+				color: $gray;
+			}
+		}
+	}
+	&__02{
+		display: block;
+		-webkit-writing-mode: vertical-rl;
+		-ms-writing-mode: tb-rl;
+		writing-mode: vertical-rl;
+		span{
+			display: block;
+		}
+		.c-ft--en{
+			@include font-size(18);
+			line-height: 1.4;
+			letter-spacing: 3px;
+			margin: 0 0 0 8px;
+		}
+		.c-ft--jp{
+			@include fts(32,44);
+			font-weight: 500;
+			letter-spacing: 11px;
+		}
+	}
+}
+
+//btn
+.c-btn{
+	&__01{
+
+	}
+	&__close{
+		width: 100%;
+		max-width: 166px;
+		height: 50px;
+		margin: 0 auto;
+		border-radius: 50px;
+		font-family: $font-en;
+		background: #FAFAFA;
+		@include flex(center,center,wrap);
+		border: 1px solid #DCE4E8;
+		cursor: pointer;
+		@include smooth-transition;
+		&:hover{
+			opacity: 0.7;
+		}
+	}
+}
+
+
+//fade up
+.js-scrollin {
+	opacity: 0;
+	-webkit-transform: translate(0, 70px);
+	-ms-transform: translate(0, 70px);
+	transform: translate(0, 70px);
+	&.active{
+		opacity: 1;
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		transform: translate(0, 0);
+		-webkit-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		-o-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+}
+
+
+
