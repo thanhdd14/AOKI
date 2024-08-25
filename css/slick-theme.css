@@ -149,3 +149,8 @@
     font-size: 16px;
   }
 }
+@media screen and (max-width: 834px) {
+  .news-list__item a p {
+    -webkit-box-orient: vertical;
+  }
+}

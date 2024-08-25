@@ -7,6 +7,16 @@ $('.js-mobile').on('click', function(){
     $(".header-nav").fadeToggle();
 });
 
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 10) {
+        $("#header").addClass("js-fixed");
+    }
+    else {
+        $("#header").removeClass("js-fixed");
+    }
+});
+
+
 jQuery('.js-openpopup').click(function(e) {
     e.preventDefault();
     $(".popup-tel").addClass("active");
@@ -21,7 +31,7 @@ jQuery('.js-close').click(function(e) {
 
 //siider-home
 $('.js-mv-slider').slick({
-    dots: false,
+    dots: true,
     focusOnSelect: true,
     pauseOnHover:false,
     infinite: true,
@@ -31,14 +41,53 @@ $('.js-mv-slider').slick({
     cssEase: 'linear'
 });
 
-// $(".js-product").slick({
-// 	slidesToShow: 3,
-// 	slidesToScroll: 1,
-// 	autoplay: true,
-// 	autoplaySpeed: 2000,
-	// prevArrow:"<button type='button' class='slick-prev pull-left'></button>",
-	// nextArrow:"<button type='button' class='slick-next pull-right'></button>"
-// });
+var window_type;
+var $window = $(window);
+if ($window.width() <= 834) {
+    window_type = 'sp';
+} else {
+    window_type = 'pc';
+}
+$(window).resize(function() {
+    if($window.width() <= 834){
+        if( (window_type != 'sp') ){
+            location.reload();
+        }
+    }else{
+        if(window_type != 'pc'){
+            location.reload();
+        }
+    }
+});
+
+$(document).ready(function() {
+    if($(window).width()<834){
+        $(".js-promise-list").slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            autoplay: false,
+            centerMode: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 640,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    }
+    else{
+    }
+});
+
+
+
 
 
 // $(".js-product").slick({
@@ -55,46 +104,34 @@ $('.js-mv-slider').slick({
 
 
 //matchHeight
-// jQuery(function ($) {
-//     $('.news .item').matchHeight();
-// });
+jQuery(function ($) {
+    $('.promise-list .promise-list__item .promise-list__box').matchHeight();
+});
 
 
 
 //fade
-// $(window).on('scroll load assessFeatureHeaders', function(){
-//     var scrollTop = $(window).scrollTop();
-//     var appearenceBuffer = 60;
-//     var windowBottom = scrollTop + $(window).height() - appearenceBuffer;
-//     $('body').toggleClass('scrolled-down', scrollTop > 0);
-//     $('.js-scrollin:not(.active)').filter(function(){
-//         var offset = $(this).offset().top;
-//         var height = $(this).outerHeight();
-//         return offset + height >= scrollTop && offset <= windowBottom;
-//     }).addClass('active');
-// });
+$(window).on('scroll load assessFeatureHeaders', function(){
+    var scrollTop = $(window).scrollTop();
+    var appearenceBuffer = 60;
+    var windowBottom = scrollTop + $(window).height() - appearenceBuffer;
+    $('body').toggleClass('scrolled-down', scrollTop > 0);
+    $('.js-scrollin:not(.active)').filter(function(){
+        var offset = $(this).offset().top;
+        var height = $(this).outerHeight();
+        return offset + height >= scrollTop && offset <= windowBottom;
+    }).addClass('active');
+});
 
 
 //backtop
-// jQuery(document).ready(function ($) {
-//     $(".js-backtop").hide();
-//     $(window).on("scroll", function () {
-//         if($(window).scrollTop()> $("#footer").offset().top - $(window).outerHeight()){
-//             $(".js-backtop").addClass("active");
-//         }
-//         else {
-//             $(".js-backtop").removeClass("active");
-//         }
-//         if ($(this).scrollTop() > 100) {
-//             $(".js-backtop").fadeIn("fast");
-//         } else {
-//             $(".js-backtop").fadeOut("fast");
-//         }
-//     });
-//     $('.js-backtop').click(function () {
-//         $('body,html').animate({
-//             scrollTop: 0
-//         }, 500);
-//         return false;
-//     });
-// });
+jQuery(document).ready(function ($) {
+    $(window).on("scroll", function () {
+        if($(window).scrollTop()> $(".policy-block__img").offset().top ){
+            $(".sticky-box").addClass("change-img");
+        }
+        else {
+            $(".sticky-box").removeClass("change-img");
+        }
+    });
+});

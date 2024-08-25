@@ -1,0 +1,243 @@
+@use "vars" as *;
+
+
+.sec-flow{
+	padding: 50px 0;
+}
+.flow-list{
+	max-width: 960px;
+	margin: 0 auto;
+	&__item{
+		margin-bottom: 37px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__box{
+		@include flex(0,center,wrap);
+		border: 1px solid #DCE4E8;
+		position: relative;
+		padding: 40px 0;
+		&:before{
+			content: "";
+			height: 40px;
+			width: 5px;
+			background: $gray;
+			position: absolute;
+			@include v-align;
+			left: 0;
+		}
+	}
+	&__ttl{
+		width: 220px;
+		padding: 0 20px 0 44px;
+		letter-spacing: 1px;
+		span{
+			display: block;
+		}
+		.c-ft--en{
+			color: $gray;
+			@include font-size(14);
+			margin-bottom: 5px;
+		}
+		.c-ft--jp{
+			@include font-size(18);
+			font-weight: 500;
+		}
+	}
+	&__ct{
+		width: calc(100% - 220px);
+		border-left: 1px solid #dce4e8;
+		padding: 0 38px 0 41px;
+		letter-spacing: 1px;
+	}
+}
+
+.sec-treatment{
+	padding: 50px 0;
+}
+
+.treatment-block{
+	@include flex(0,0,wrap);
+	position: relative;
+	border: 1px solid #DCE4E8;
+	padding: 33px 0;
+	&__item{
+		width: 50%;
+		border-right: 1px solid #DCE4E8;
+		padding: 0 41px;
+		letter-spacing: 1px;
+		&:nth-child(2){
+			border-right: none;
+		}
+	}
+	&__ttl{
+		display: block;
+		text-align: center;
+		@include font-size(24);
+		line-height: 1.4;
+		font-weight: 500;
+		margin-bottom: 21px;
+		.c-fc--gray{
+			span{
+				position: relative;
+				&:before{
+					content: ".";
+					position: absolute;
+					bottom: calc(100% - 6px);
+					left: 0;
+					right: 0;
+					margin: 0 auto;
+					text-align: center;
+				}
+			}
+		}
+	}
+	p{
+		margin-bottom: 29px;
+	}
+	&__box{
+		background: #FAFAFA;
+		padding: 34px 30px;
+		@include fts(14,25);
+		&-ttl{
+			display: block;
+			text-align: center;
+			@include font-size(18);
+			line-height: 1.4;
+			font-weight: 500;
+			letter-spacing: 1.5px;
+			margin-bottom: 14px;
+		}
+		p{
+			margin-bottom: 0;
+		}
+	}
+}
+
+.sec-price{
+	padding: 100px 0;
+}
+.price-show{
+	&__item{
+		margin-bottom: 62px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
+.price-list{
+	@include flex(between,0,wrap);
+	&__item{
+		width: calc(50% - 10px);
+		border: 1px solid #DCE4E8;
+		@include flex(0,center,wrap);
+		margin-bottom: 20px;
+		padding: 32px 0;
+	}
+	&__ct{
+		border-right: 1px solid #DCE4E8;
+		width: calc(100% - 215px);
+		padding: 0 30px;
+		&-ttl{
+			display: block;
+			@include font-size(18);
+			font-weight: 500;
+			margin-bottom: 10px;
+		}
+	}
+	&__oder{
+		width: 215px;
+		text-align: center;
+		span{
+			display: block;
+		}
+		&-num{
+			display: block;
+			@include font-size(24);
+			font-weight: 500;
+			small{
+				@include font-size(15);
+			}
+		}
+	}
+}
+
+.sec-payment{
+	padding: 0 0 150px;
+}
+.payment-list{
+	@include flex(0,0,wrap);
+	margin: 0 -20px;
+	&__item{
+		width: 33.333%;
+		padding: 0 20px;
+		position: relative;
+	}
+	&__box{
+		border: 1px solid #E6ECEE;
+		text-align: center;
+		position: relative;
+		height: 100%;
+		letter-spacing: 1px;
+		padding: 37px 0 20px;
+		>*{
+			position: relative;
+			z-index: 2;
+		}
+		//&:before{
+		//	content: "";
+		//	height: 100px;
+		//	position: absolute;
+		//	@include v-align;
+		//	left: -1px;
+		//	right: -1px;
+		//	background: white;
+		//	z-index: 1;
+		//}
+		&:before,&:after{
+			content: "";
+			position: absolute;
+			top: -1px;
+			bottom: -1px;
+			width: 20%;
+			background: white;
+		}
+		&:before{
+			left: 15%;
+		}
+		&:after{
+			left: 65%;
+		}
+		&-icon{
+			width: 40px;
+			margin: 0 auto 10px;
+			position: static;
+			&:before{
+				content: "";
+				height: 50%;
+				position: absolute;
+				@include v-align;
+				left: -1px;
+				right: -1px;
+				background: white;
+			}
+			img{
+				position: relative;
+				z-index: 1;
+			}
+		}
+		&-ttl{
+			display: block;
+			@include font-size(16);
+			font-weight: 500;
+			margin-bottom: 10px;
+		}
+		p{
+			margin-bottom: 15px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+}

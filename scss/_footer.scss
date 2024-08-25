@@ -1,5 +1,188 @@
 @use "vars" as *;
 
 #footer{
+	padding: 98px 0 0;
+	@include mq(){
+		padding: 80px 0 0;
+	}
+	.footer-block{
+		@include flex(0,0,wrap);
+		margin-bottom: 90px;
+		@include mq(){
+			margin-bottom: 44px;
+		}
+		&__note{
+			width: 47.5%;
+			@include fts(12,21);
+			color: #3B4A50;
+			padding: 0 5% 0 0;
+			@include mq(){
+				width: 100%;
+				padding: 0;
+				margin-bottom: 38px;
+			}
+		}
+		&__maps{
+			width: 52.5%;
+			@include mq(){
+				width: 100%;
+			}
+			iframe{
+				width: 100% !important;
+				height: 462px !important;
+				@include mq(){
+					height: 244px !important;
+				}
+			}
+		}
+	}
+	.footer-logo{
+		display: block;
+		margin-bottom: 53px;
+		@include mq(){
+			max-width: 280px;
+			margin: 0 auto 40px;
+		}
+		img{
+			width: 392px;
+		}
+	}
+	.footer-item{
+		margin-bottom: 48px;
+		@include mq(){
+			margin-bottom: 31px;
+		}
+		li{
+			position: relative;
+			font-size: 1.5rem;
+			line-height: 1.6;
+			padding: 0 0 0 45px;
+			margin-bottom: 20px;
+			@include mq(){
+				padding: 0 0 0 35px;
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+			img{
+				width: 24px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+	.footer-calendar{
+		width: 100%;
+		border: 1px solid #DCE4E8;
+		@include font-size(14);
+		letter-spacing: 1px;
+		margin-bottom: 20px;
+		@include mq(){
+			@include font-size(13);
+		}
+		tr{
+			border-bottom: 1px solid #DCE4E8;
+			th,td{
+				padding: 9px 0;
+				&:nth-child(1){
+					width: 195px;
+					padding-left: 20px;
+					@include mq(){
+						padding-left: 0;
+						width: 90px;
+						text-align: center;
+					}
+					span{
+						display: inline-block;
+						position: relative;
+						@include mq(){
+							display: block;
+						}
+						&:nth-child(1){
+							padding: 0 10px 0 0;
+							margin: 0 6px 0 0;
+							@include mq(){
+								padding: 0 0 5px;
+								margin: 0 0 0;
+							}
+							&:after{
+								content: "";
+								width: 4px;
+								height: 1px;
+								background: $dark;
+								position: absolute;
+								@include v-align;
+								right: 0;
+								@include mq(){
+									top: auto;
+									transform: translateY(0);
+									bottom: 0;
+									width: 1px;
+									height: 4px;
+									left: 0;
+									margin: 0 auto;
+								}
+							}
+						}
+					}
+				}
+			}
+			th{
+				font-weight: bold;
+				@include mq(){
+					&:nth-child(1){
+						@include font-size(12);
+					}
+				}
+			}
+			td{
+				font-weight: 500;
 
+			}
+		}
+	}
+	.footer-menu{
+		border-top: 1px solid #DCE4E8;
+		@include flex(center,center,wrap);
+		padding: 40px 15px;
+		@include mq(sm){
+			display: block;
+			padding: 0;
+			border: none;
+		}
+		li{
+			padding: 0 10px;
+			@include mq(sm){
+				padding: 0;
+			}
+			a{
+				display: block;
+				@include font-size(14);
+				color: $dark;
+				position: relative;
+				@include mq(sm){
+					border-top: 1px solid #E6ECEE;
+					padding: 20px;
+					&:after{
+						content: "";
+						width: 6px;
+						height: 12px;
+						background: url("../img/common/arrow-right-02.png")no-repeat;
+						background-size: 100%;
+						position: absolute;
+						@include v-align;
+						right: 15px;
+					}
+				}
+			}
+		}
+	}
+	.copyright{
+		text-align: center;
+		color: white;
+		@include font-size(10);
+		padding: 15px;
+		background: #3E7084;
+	}
 }
