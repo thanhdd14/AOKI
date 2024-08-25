@@ -17,10 +17,23 @@
 .clinic-list{
 	@include flex(0,0,wrap);
 	margin: 0 -10px;
+	@include mq(sm){
+		margin: 0;
+	}
 	&__item{
 		width: 25%;
 		padding: 0 10px;
 		margin-bottom: 70px;
+		@include mq(lg){
+			width: 50%;
+		}
+		@include mq(sm){
+			width: 100%;
+			margin-bottom: 40px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
 	}
 	&__box{
 		border: 1px solid #E6ECEE;
@@ -59,5 +72,7 @@
 }
 
 .sec-facilities{
-	padding: 0 0;
+	@include mq(){
+		padding: 50px 0;
+	}
 }

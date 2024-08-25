@@ -165,6 +165,20 @@ Component
 			bottom: 0;
 		}
 	}
+	&__04{
+		display: block;
+		@include font-size(22);
+		line-height: 1.4;
+		font-weight: 500;
+		position: relative;
+		border-bottom: 1px solid #DCE4E8;
+		padding: 0 0 10px;
+		margin-bottom: 15px;
+		@include mq(){
+			@include font-size(18);
+			margin-bottom: 10px;
+		}
+	}
 }
 
 .flex-end{
