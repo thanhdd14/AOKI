@@ -106,6 +106,7 @@ $(document).ready(function() {
 //matchHeight
 jQuery(function ($) {
     $('.promise-list .promise-list__item .promise-list__box').matchHeight();
+    $('.treatment-block .treatment-block__item .treatment-block__box').matchHeight();
 });
 
 

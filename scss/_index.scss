@@ -277,7 +277,8 @@
 }
 
 .promise-list{
-	margin-bottom: 59px;
+	max-width: 980px;
+	margin:  0 auto 59px;
 	@include mq(){
 		&.js-promise-list{
 			margin: 0 -20px 26px;
@@ -399,10 +400,8 @@
 		padding: 81px 0 74px;
 	}
 	&.service-page{
+		padding-top: 0;
 		background: white;
-		@include mq(){
-			padding-top: 50px;
-		}
 	}
 }
 .service-list{

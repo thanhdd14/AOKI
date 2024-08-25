@@ -150,6 +150,11 @@ Component
 		padding: 0 0 0 29px;
 		letter-spacing: 2px;
 		margin-bottom: 32px;
+		@include mq(){
+			@include font-size(20);
+			padding: 0 0 0 22px;
+			margin-bottom: 22px;
+		}
 		&:before{
 			content: "";
 			width: 5px;

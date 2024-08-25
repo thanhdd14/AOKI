@@ -3,6 +3,11 @@
 
 
 .pc{
+	&-xl{
+		@include mq(xl){
+			display: none !important;
+		}
+	}
 	@include mq(){
 		display: none !important;
 	}

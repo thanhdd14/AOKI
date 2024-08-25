@@ -1,0 +1,63 @@
+@use "vars" as *;
+
+@include mq(md-min){
+	.page-about{
+		.sec-promise{
+			padding-bottom: 100px;
+		}
+		.sec-policy{
+			padding: 100px 0 200px;
+		}
+	}
+}
+
+.sec-clinic{
+	padding: 0 0 50px;
+}
+.clinic-list{
+	@include flex(0,0,wrap);
+	margin: 0 -10px;
+	&__item{
+		width: 25%;
+		padding: 0 10px;
+		margin-bottom: 70px;
+	}
+	&__box{
+		border: 1px solid #E6ECEE;
+		height: 100%;
+	}
+	&__img{
+		img{
+			width: 100%;
+		}
+	}
+	&__ct{
+		padding: 20px;
+		letter-spacing: 1px;
+		&-ttl{
+			display: block;
+			@include font-size(18);
+			line-height: 1.4;
+			font-weight: 500;
+			text-align: center;
+			position: relative;
+			padding: 0 0 14px;
+			margin-bottom: 14px;
+			&:after{
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 10px;
+				height: 2px;
+				margin: 0 auto;
+				background: #7AB1CD;
+			}
+		}
+	}
+}
+
+.sec-facilities{
+	padding: 0 0;
+}
